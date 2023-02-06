@@ -24,14 +24,24 @@ enum layers {
 #define SHIFT   LM(SHIFT_LAYER, MOD_LSFT)
 
 
+
+const uint16_t PROGMEM combo1[] = {KC_LCTL, SE_A, COMBO_END};
+const uint16_t PROGMEM combo2[] = {KC_LCTL, SE_E, COMBO_END};
+const uint16_t PROGMEM combo3[] = {KC_LCTL, SE_O, COMBO_END};
+combo_t key_combos[COMBO_COUNT] = {
+    COMBO(combo1, SE_ARNG), // Å = ctrl + A
+    COMBO(combo2, SE_ADIA), // Ä = ctrl + E
+    COMBO(combo3, SE_ODIA), // Ö = ctrl + O
+};
+
 /* ============ Layout ============ */
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     [BASE_LAYER] = LAYOUT_65_ansi_blocker(
         KC_ESC,  SE_1,    SE_2,    SE_3,    SE_4,    SE_5,    SE_6,    SE_7,    SE_8,    SE_9,    SE_0,    SE_MINS, SE_EQL,  KC_BSPC, KC_DEL,
         KC_TAB,  SE_Q,    SE_W,    SE_E,    SE_R,    SE_T,    SE_Y,    SE_U,    SE_I,    SE_O,    SE_P,    SE_LBRC, SE_RBRC, SE_BSLS, KC_HOME,
         KC_CAPS, SE_A,    SE_S,    SE_D,    SE_F,    SE_G,    SE_H,    SE_J,    SE_K,    SE_L,    SE_SCLN, SE_QUOT,          KC_ENT,  KC_PGUP,
-        KC_LSFT, SE_Z,    SE_X,    SE_C,    SE_V,    SE_B,    SE_N,    SE_M,    SE_COMM, SE_DOT,  SE_SLSH, KC_RSFT,          KC_UP,   KC_PGDN,
-        KC_LCTL, KC_LGUI, KC_LALT,                            KC_SPC,                             KC_RALT, MOD,   KC_LEFT, KC_DOWN, KC_RGHT
+        SHIFT,   SE_Z,    SE_X,    SE_C,    SE_V,    SE_B,    SE_N,    SE_M,    SE_COMM, SE_DOT,  SE_SLSH, KC_RSFT,          KC_UP,   KC_PGDN,
+        KC_LCTL, KC_LGUI, KC_LALT,                            KC_SPC,                             KC_RALT, MOD,     KC_LEFT, KC_DOWN, KC_RGHT
     ),
     [MOD_LAYER] = LAYOUT_65_ansi_blocker(
         KC_GRV,  KC_F1,   KC_F2,   KC_F3,   KC_F4,   KC_F5,   KC_F6,   KC_F7,   KC_F8,   KC_F9,   KC_F10,  KC_F11,  KC_F12,  _______, KC_MUTE,

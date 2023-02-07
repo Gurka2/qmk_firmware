@@ -44,7 +44,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
         _______, _______, _______,                            _______,                            _______, _______, KC_HOME, KC_PGDN, KC_END
     ),
     [SHIFT_LAYER] = LAYOUT_65_ansi_blocker(
-        _______, SE_EXLM, SE_AT,   SE_HASH, SE_DLR,  SE_PERC, SE_CIRC, SE_AMPR, SE_ASTR, SE_LPRN, SE_RPRN, SE_UNDS, SE_PLUS, _______, _______,
+        _______, SE_EXLM, _______, SE_HASH, _______, SE_PERC, SE_CIRC, SE_AMPR, SE_ASTR, SE_LPRN, SE_RPRN, SE_UNDS, SE_PLUS, _______, _______,
         _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, SE_LCBR, SE_RCBR, SE_PIPE, _______,
         _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, SE_COLN, SE_DQUO,          _______, _______,
         _______, _______, _______, _______, _______, _______, _______, _______, _______, SE_LABK, SE_RABK, SE_QUES,          _______, _______,

@@ -1,5 +1,6 @@
 #include QMK_KEYBOARD_H
 #include "keymap_swedish.h"
+#include "keymap_combo.h"
 
 enum alt_keycodes {
     U_T_AUTO = SAFE_RANGE, //USB Extra Port Toggle Auto Detect / Always Active
@@ -11,6 +12,7 @@ enum alt_keycodes {
     MD_BOOT,               //Restart into bootloader after hold timeout
 };
 
+
 /* ============ Layers ============ */
 enum layers {
     BASE_LAYER,
@@ -19,20 +21,11 @@ enum layers {
     MOD_LAYER
 };
 
+
 /* ============ Keycodes ============ */
 #define MOD     MO(MOD_LAYER)
 #define SHIFT   LM(SHIFT_LAYER, MOD_LSFT)
 
-
-
-const uint16_t PROGMEM combo1[] = {KC_LCTL, SE_A, COMBO_END};
-const uint16_t PROGMEM combo2[] = {KC_LCTL, SE_E, COMBO_END};
-const uint16_t PROGMEM combo3[] = {KC_LCTL, SE_O, COMBO_END};
-combo_t key_combos[COMBO_COUNT] = {
-    COMBO(combo1, SE_ARNG), // Å = ctrl + A
-    COMBO(combo2, SE_ADIA), // Ä = ctrl + E
-    COMBO(combo3, SE_ODIA), // Ö = ctrl + O
-};
 
 /* ============ Layout ============ */
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
